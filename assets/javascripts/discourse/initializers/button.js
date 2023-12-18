@@ -1,8 +1,20 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
+import showModal from "discourse/lib/show-modal";
+import PostSearch from "../components/modal/rules-citer";
 export default {
   name: "rules-citer",
   initialize() {
     withPluginApi("0.0.1", (api) => {
+      const modal = api.container.lookup("service:modal");
+
+      // add option to toolbar
+      api.addComposerToolbarPopupMenuOption({
+        action: (toolbarEvent) => {
+          modal.show(PostSearch, { model: { toolbarEvent } });
+        },
+        icon: "balance-scale",
+        label: "rule_search_title",
+      });
 
       api.onToolbarCreate((toolbar) => {
         toolbar.addButton({

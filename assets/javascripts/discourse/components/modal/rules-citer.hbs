@@ -1,0 +1,25 @@
+<DModal @title={{i18n "modalTitle"}} @closeModal={{@closeModal}}>
+
+  <:body>
+  <div class="rules-search">
+    <Input
+      id="user-question"
+      @type="text"
+      @value={{this.searchInput}}
+      @placeholder={{i18n "searchPlaceholder"}}
+    />
+    <DButton  @icon="search" @action={{this.search}} /></div>
+    {{#if searchResults}}
+      <ul class="rules-results">
+        {{#each this.searchResults as |result|}}
+          <li class="rules-result" {{action "select" result}}>
+            {{result.textContent}}
+          </li>
+        {{/each}}
+
+      </ul>
+    {{/if}}
+
+  </:body>
+
+</DModal>

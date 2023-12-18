@@ -1,0 +1,22 @@
+.rules-result {
+    margin-bottom: 1em;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    /*hide list style*/
+    list-style: none;
+    margin-left: 0;
+    cursor: pointer;
+    
+}
+.rules-results {
+    margin-left: 0;
+}
+.rules-search {
+    display: flex;
+}
+.rules-search input {
+    flex-grow: 1;
+    margin-bottom: 0;
+}

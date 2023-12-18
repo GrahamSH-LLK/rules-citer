@@ -11,7 +11,7 @@ export function setup(helper) {
   helper.allowList(["a"]);
 
   helper.registerPlugin((md) => {
-    const ruleRegex = /(([a-zA-Z])(\d{3}))/;
+    const ruleRegex = /(([a-zA-Z])(\d{3}))|(\d+\.\d(\.\d)?)/;
     md.inline.bbcode.ruler.push("rule", {
       tag: "rule",
       wrap: function (startToken, endToken, tagInfo, content, state) {
