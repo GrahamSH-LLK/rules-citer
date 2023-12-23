@@ -4,7 +4,7 @@ export function setup(helper) {
   }
 
   helper.registerOptions((opts, siteSettings) => {
-    opts.features["discourse_rules_enabled"] =
+    opts.features["rules-citer"] =
       !!siteSettings.discourse_rules_enabled;
   });
 
@@ -16,6 +16,7 @@ export function setup(helper) {
       tag: "rule",
       wrap: function (startToken, endToken, tagInfo, content, state) {
         const year = tagInfo.attrs["year"] || new Date().getFullYear();
+
         if (ruleRegex.test(content)) {
           startToken.type = "link_open";
           startToken.tag = "a";
@@ -24,6 +25,7 @@ export function setup(helper) {
             ["href", `https://frctools.com/${year}/rule/${content}`],
             ["data-bbcode", "true"],
           ];
+          
           let startTokenIdx = state.tokens.findIndex((t) => t == startToken);
           if (startTokenIdx > 0) {
             let prevToken = state.tokens[startTokenIdx - 1];

@@ -21,12 +21,13 @@ export default {
           id: "rule_button",
           group: "fontStyles",
           icon: "balance-scale",
-          perform: (e) =>
+          perform: (e) => {
             e.applySurround(
               `[rule year="${new Date().getFullYear()}"]`,
               "[/rule]",
               "rule_text"
-            ),
+            );
+          },
         });
       });
       let translations = I18n.translations[I18n.currentLocale()].js;
