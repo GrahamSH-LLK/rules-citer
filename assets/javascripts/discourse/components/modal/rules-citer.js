@@ -7,23 +7,20 @@ export default class PostSearch extends Component {
   @tracked searchResults = [];
   @action
   async search() {
-    const url = `https://search.grahamsh.com/search`;
+    const url = `https://frctools.com/api/search?year=${new Date().getFullYear()}&query=${this.searchInput}`;
     const res = await fetch(url, {
-      method: "POST",
-      body: JSON.stringify({
-        query: this.searchInput,
-      }),
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
     });
     const data = await res.json();
-    this.searchResults = data.data;
+    this.searchResults = data.hits;
   }
   @action
   async select(result) {
     console.log(this.args);
     // update the post
-    this.args.model.toolbarEvent.addText(`[rule year=${new Date().getFullYear()}]${result.text}[/rule]`);
+    this.args.model.toolbarEvent.addText(`[rule year=${new Date().getFullYear()}]${result.name}[/rule]`);
   }
 }

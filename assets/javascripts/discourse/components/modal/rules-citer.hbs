@@ -13,7 +13,7 @@
       <ul class="rules-results">
         {{#each this.searchResults as |result|}}
           <li class="rules-result" {{action "select" result}}>
-            {{result.textContent}}
+            {{result.summary}}
           </li>
         {{/each}}
 
