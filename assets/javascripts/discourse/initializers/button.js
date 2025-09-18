@@ -12,7 +12,7 @@ export default {
         action: (toolbarEvent) => {
           modal.show(PostSearch, { model: { toolbarEvent } });
         },
-        icon: "balance-scale",
+        icon: "scale-balanced",
         label: "rule_search_title",
       });
 
@@ -20,8 +20,9 @@ export default {
         toolbar.addButton({
           id: "rule_button",
           group: "fontStyles",
-          icon: "balance-scale",
+          icon: "scale-balanced",
           perform: (e) => {
+            console.log(e);
             e.applySurround(
               `[rule year="${new Date().getFullYear()}"]`,
               "[/rule]",
