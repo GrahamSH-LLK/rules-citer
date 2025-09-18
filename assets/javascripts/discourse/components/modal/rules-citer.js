@@ -21,6 +21,6 @@ export default class PostSearch extends Component {
   async select(result) {
     console.log(this.args);
     // update the post
-    this.args.model.toolbarEvent.addText(`[rule year=${new Date().getFullYear()}]${result.name}[/rule]`);
+    this.args.model.toolbarEvent.addText(`https://frctools.com/${new Date().getFullYear()}/rule/${result.name}`);
   }
 }

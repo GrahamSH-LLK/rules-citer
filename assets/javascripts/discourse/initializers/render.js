@@ -4,6 +4,9 @@ export default {
     name: 'rules-citer-render',
     initialize() {
         function onMessage(e) {
+            if (e.origin !== 'https://frctools.com') {
+                return;
+            }
             const height = Number(e.data);
             if (!Number.isFinite(height) || height <= 0) {
                 return;
