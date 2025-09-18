@@ -7,7 +7,7 @@ export default class PostSearch extends Component {
   @tracked searchResults = [];
   @action
   async search() {
-    const url = `https://frctools.com/api/search?year=${new Date().getFullYear()}&query=${this.searchInput}`;
+    const url = `https://frctools.com/api/search?year=${new Date().getFullYear()}&query=${this.searchInput}&semantic=true`;
     const res = await fetch(url, {
       method: "GET",
       headers: {

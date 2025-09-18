@@ -8,7 +8,7 @@
       @value={{this.searchInput}}
       @placeholder={{i18n "searchPlaceholder"}}
     />
-    <DButton  @icon="search" @action={{this.search}} /></div>
+    <DButton  @icon="magnifying-glass" @action={{this.search}} /></div>
     {{#if searchResults}}
       <ul class="rules-results">
         {{#each this.searchResults as |result|}}

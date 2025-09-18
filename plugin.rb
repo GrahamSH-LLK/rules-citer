@@ -1,6 +1,6 @@
 # name: rules-citer
 # about: A plugin to add a rules tag and linking to posts
-# version: 0.0.2
+# version: 1.0.0
 # authors: GrahamSH
 # url: https://github.com/grahamsh-llk/rules-citer
 enabled_site_setting :discourse_rules_enabled
@@ -37,7 +37,4 @@ class Onebox::Engine::FRCToolsOnebox
     HTML
   end
 
-  def placeholder_html
-    to_html
-  end
 end

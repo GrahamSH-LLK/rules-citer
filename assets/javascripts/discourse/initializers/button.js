@@ -23,10 +23,8 @@ export default {
           icon: "scale-balanced",
           perform: (e) => {
             console.log(e);
-            e.applySurround(
-              `[rule year="${new Date().getFullYear()}"]`,
-              "[/rule]",
-              "rule_text"
+            e.addText(
+              `https://frctools.com/${new Date().getFullYear()}/rule/`,
             );
           },
         });
@@ -40,7 +38,7 @@ export default {
       }
       translations.composer.rule_button_title = "Cite Rule";
 
-      translations.composer.rule_text = "Rule Number";
+      translations.composer.rule_text = "";
     });
   },
 };
