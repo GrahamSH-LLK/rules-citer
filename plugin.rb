@@ -1,6 +1,6 @@
 # name: rules-citer
 # about: A plugin to add a rules tag and linking to posts
-# version: 1.0.1
+# version: 1.0.2
 # authors: GrahamSH
 # url: https://github.com/grahamsh-llk/rules-citer
 enabled_site_setting :discourse_rules_enabled
